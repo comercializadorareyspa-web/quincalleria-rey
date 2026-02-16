@@ -3,31 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <title>Quincallería Rey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilo.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    /* Reset básico */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: Arial, sans-serif; }
+
     header { background-color: #f4f4f4; text-align: center; padding: 10px; }
-    header img { max-height: 80px; }
+    header img.logo { max-height: 80px; }
     header h1 { margin: 5px 0; }
-    .banner { width: 100%; max-height: 200px; object-fit: cover; }
-    .oferta { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-    .producto { border: 1px solid #ccc; margin: 10px; padding: 10px; width: 200px; text-align: center; }
+    header img.banner { width: 100%; max-height: 200px; object-fit: cover; }
+
+    h2 { text-align: center; margin: 20px 0; }
+
+    .oferta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 15px; /* espacio entre productos */
+    }
+
+    .producto {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 220px; /* ancho base */
+      text-align: center;
+      flex: 1 1 200px; /* crecer, encoger, tamaño base */
+      max-width: 250px;
+    }
+
     .producto img { width: 100%; height: 150px; object-fit: cover; }
-    .producto h3 { margin: 5px 0; }
+    .producto h3 { margin: 10px 0 5px 0; }
     .producto p { margin: 5px 0; }
-    .producto a { display: inline-block; padding: 5px 10px; background-color: #25D366; color: white; text-decoration: none; margin-top: 5px; }
-    footer { text-align: center; background-color: #f4f4f4; padding: 10px; margin-top: 20px; }
+    .producto a {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      margin-top: 5px;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 15px 10px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Media queries para móviles */
+    @media (max-width: 768px) {
+      .oferta { flex-direction: column; align-items: center; padding: 10px; }
+      .producto { width: 90%; max-width: 300px; }
+      header img.logo { max-height: 60px; }
+      header img.banner { max-height: 150px; }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="img/logo.png" alt="Logo Quincallería">
+  <img src="img/logo.png" alt="Logo Quincallería" class="logo">
   <h1>Quincallería Mi Local</h1>
   <img src="img/banner.jpg" alt="Banner" class="banner">
 </header>
 
-<h2 style="text-align:center; margin-top:20px;">Ofertas de la semana</h2>
+<h2>Ofertas de la semana</h2>
 
 <div class="oferta">
   <!-- Producto 1 -->
@@ -35,7 +81,7 @@
     <img src="img/producto1.jpg" alt="Martillo">
     <h3>Martillo 16oz</h3>
     <p>Precio: $5.000</p>
-    <p>Descripción: Martillo de acero, mango de madera</p>
+    <p>Martillo de acero, mango de madera</p>
     <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20consultar%20por%20Martillo%2016oz">Consultar por WhatsApp</a>
   </div>
 
@@ -44,7 +90,7 @@
     <img src="img/producto2.jpg" alt="Taladro">
     <h3>Taladro eléctrico</h3>
     <p>Precio: $25.000</p>
-    <p>Descripción: Taladro 500W con 2 velocidades</p>
+    <p>Taladro 500W con 2 velocidades</p>
     <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20consultar%20por%20Taladro%20eléctrico">Consultar por WhatsApp</a>
   </div>
 
@@ -53,7 +99,7 @@
     <img src="img/producto3.jpg" alt="Tornillos">
     <h3>Tornillos x100</h3>
     <p>Precio: $3.000</p>
-    <p>Descripción: Tornillos de acero, 5cm</p>
+    <p>Tornillos de acero, 5cm</p>
     <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20consultar%20por%20Tornillos">Consultar por WhatsApp</a>
   </div>
 
@@ -62,7 +108,7 @@
     <img src="img/producto4.jpg" alt="Destornillador">
     <h3>Destornillador Phillips</h3>
     <p>Precio: $2.000</p>
-    <p>Descripción: Mango antideslizante</p>
+    <p>Mango antideslizante</p>
     <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20consultar%20por%20Destornillador">Consultar por WhatsApp</a>
   </div>
 </div>
@@ -75,3 +121,4 @@
 
 </body>
 </html>
+
